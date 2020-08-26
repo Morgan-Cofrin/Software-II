@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <VBox layoutX="25.0" layoutY="80.0" prefHeight="400.0" prefWidth="100.0">
+        <Button fx:id="btnNavHomeScreen" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#gotoHomeScreen" prefHeight="100.0" prefWidth="100.0" text="Home" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="SansSerif Regular" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnNavCustInfoScreen" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#gotoCustInfoScreen" prefHeight="100.0" prefWidth="100.0" text="Customer Information" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="SansSerif Regular" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnNavApptsScreen" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#gotoApptsScreen" prefHeight="100.0" prefWidth="100.0" text="My Appointments" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="SansSerif Regular" size="13.0" />
+            </font>
+        </Button>
+        <Button fx:id="btnNavReportsScreen" focusTraversable="false" mnemonicParsing="false" onMouseClicked="#gotoReportsScreen" prefHeight="100.0" prefWidth="100.0" text="Reports" textAlignment="CENTER" wrapText="true">
+            <font>
+                <Font name="SansSerif Regular" size="13.0" />
+            </font>
+        </Button>
+    </VBox>
+    <Label fx:id="lblUsername" layoutX="25.0" layoutY="20.0" prefHeight="50.0" prefWidth="150.0" text="Current User's username" />
+    <Label fx:id="lblDateAndTime" layoutX="200.0" layoutY="20.0" prefHeight="50.0" prefWidth="150.0" text="Current user's date/time in timezone" />
+    <Button fx:id="btnUserLogout" layoutX="675.0" layoutY="20.0" mnemonicParsing="false" onMouseClicked="#gotoUserLoginScreen" prefHeight="25.0" prefWidth="100.0" text="Logoff">
+        <font>
+            <Font size="14.0" />
+        </font>
+    </Button>
+   <Label layoutX="343.0" layoutY="242.0" text="Appointments Screen" />
+
+    <TableView fx:id="appointmentTable" layoutX="175.0" layoutY="125.0" prefHeight="200.0" prefWidth="550.0">
+        <columns>
+            <TableColumn fx:id="col_AppointmentTitle" prefWidth="85.0" resizable="false" text="Title">
+                <cellValueFactory>
+                    <PropertyValueFactory property="appointmentTitle" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_CustomerName" prefWidth="100.0" resizable="false" text="Customer">
+                <cellValueFactory>
+                    <PropertyValueFactory property="customerName" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_AppointmentDescription" prefWidth="120.0" resizable="false" text="Description">
+                <cellValueFactory>
+                    <PropertyValueFactory property="description" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_AppointmentType" prefWidth="85.0" resizable="false" text="Type">
+                <cellValueFactory>
+                    <PropertyValueFactory property="type" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_AppointmentStart" prefWidth="120.0" resizable="false" text="Start">
+                <cellValueFactory>
+                    <PropertyValueFactory property="start" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_AppointmentEnd" prefWidth="120.0" resizable="false" text="End">
+                <cellValueFactory>
+                    <PropertyValueFactory property="end" />
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+   <Button fx:id="btn_AddAppointment" layoutX="270.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#gotoAddAppointmentScreen" prefHeight="40.0" prefWidth="60.0" text="Add" />
+   <Button fx:id="btn_ModifyAppointment" layoutX="420.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#gotoModifyAppointmentScreen" prefHeight="40.0" prefWidth="60.0" text="Modify" />
+   <Button fx:id="btn_DeleteAppointment" layoutX="570.0" layoutY="351.0" mnemonicParsing="false" onMouseClicked="#deleteAppointment" prefHeight="40.0" prefWidth="60.0" text="Delete" />
+    <HBox layoutX="175.0" layoutY="103.0" prefHeight="17.0" prefWidth="550.0" spacing="60.0">
+        <RadioButton fx:id="radio_AllAppts" mnemonicParsing="false" onMouseClicked="#allApptsSelected"
+                     text="All Appointments"/>
+        <RadioButton fx:id="radio_ApptsByMonth" mnemonicParsing="false" onMouseClicked="#apptsByMonthSelected"
+                     text="Appointments this Month"/>
+        <RadioButton fx:id="radio_ApptsByWeek" mnemonicParsing="false" onMouseClicked="#apptsByWeekSelected"
+                     text="Appointments this week"/>
+    </HBox>
+
+</AnchorPane>

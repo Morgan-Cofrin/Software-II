@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.layout.*?>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="anchorPane" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <Label layoutX="34.0" layoutY="21.0" prefHeight="37.0" prefWidth="145.0" styleClass="headerLabel" text="Update Customer" />
+    <GridPane fx:id="addNewCustomerGridPane" layoutX="61.0" layoutY="66.0" prefHeight="260.0" prefWidth="492.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.0" minWidth="10.0" prefWidth="123.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="377.0" minWidth="0.0" prefWidth="377.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Label fx:id="lblCustomerName" styleClass="textFieldLabel" text="Customer Name">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblCustomerPhone" styleClass="textFieldLabel" text="Customer Phone" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblCustomerAddress" styleClass="textFieldLabel" text="Customer Address" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblCustomerCity" styleClass="textFieldLabel" text="Customer City" GridPane.rowIndex="5">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <Label fx:id="lblCustomerCountry" styleClass="textFieldLabel" text="Customer Country" GridPane.rowIndex="6">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </Label>
+        <TextField fx:id="textFieldCustomerName" promptText="Customer Name" GridPane.columnIndex="1">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldCustomerPhone" promptText="Customer Phone" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldCustomerAddress1" promptText="Address Line 1" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldCustomerAddress2" promptText="Address Line 2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldCustomerPostalCode" promptText="Postal Code" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldCustomerCity" promptText="Customer City" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+        <TextField fx:id="textFieldCustomerCountry" prefWidth="158.0" promptText="Customer Country" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <GridPane.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+            </GridPane.margin>
+        </TextField>
+    </GridPane>
+    <Button fx:id="btnSaveNewCustomer" layoutX="493.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#updateCustomer" text="Save" />
+    <Button fx:id="cancelButton" cancelButton="true" layoutX="349.0" layoutY="348.0" mnemonicParsing="false" onMouseClicked="#returnScreen" text="Cancel">
+        <effect>
+            <Blend mode="RED" />
+        </effect>
+    </Button>
+</AnchorPane>
